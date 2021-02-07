@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <meta charset="UTF-8">
+    <title>Agregando nuevo Conferencista</title>
+</head>
+
+<body>
+    <h1>Datos del conferencista</h1>
+    <a th:href="@{/}">Regresar inicio</a>
+
+    <form th:action="@{/guardar}" method="POST" th:object="${conferencista}">
+    <div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="nombre" th:field="*{nombre}">
+</div>
+    	<input type="hidden" name="id" th:field="*{id}">
+        
+        <br/>
+          <div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">Apellido</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="apellido" th:field="*{apellido}">
+</div>
+      
+        <br/>
+                  <div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">Ocupacion</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="ocupacion" th:field="*{ocupacion}">
+</div>
+     
+        <br/>
+                 <div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">Empresa</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="empresa" th:field="*{empresa}" >
+</div>
+        
+   
+        <br/>
+        <br/>
+        <span class="input-group-text" id="inputGroup-sizing-sm">Biografia</span>
+        <textarea type="text" name="biografia" th:field="*{biografia}" cols="40" rows="5" > </textarea>
+        <br/>
+        <br/>
+        <input type="submit" name="guardar" value="guardar">
+
+    </form>
+</body>
+
+</html>
